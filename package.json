@@ -1,0 +1,32 @@
+{
+  "name": "frontenddev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon BMSCE_FoodBlog/src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skandashastry15/FrontEndDev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skandashastry15/FrontEndDev/issues"
+  },
+  "start": "nodemon BMSCE_FoodBlog/src/app1.js",
+  "homepage": "https://github.com/skandashastry15/FrontEndDev#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.3.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  }
+}
