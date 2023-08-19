@@ -1,15 +1,23 @@
-version: '3'
+version: '3.8'
+
 services:
-  web:
-    build: .
+  # Node.js application service
+  nodejs_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodejs_app
     ports:
       - "3000:3000"
-  db:
-    image: "mysql"
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
+    depends_on:
+      - mongo
+
+  # MongoDB service
+  mongo:
+    image: mongo:latest
+    container_name: mongo_db
     volumes:
-      - db-data:/foo
+      - mongodb_data:/data/db
 
 volumes:
-  db-data:
+  mongodb_data:
