@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon BMSCE_FoodBlog/src/app1.js"
+    "start": "node BMSCE_FoodBlog/src/app1.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/skandashastry15/FrontEndDev/issues"
   },
-  "start": "nodemon BMSCE_FoodBlog/src/app1.js",
+  "start": "node BMSCE_FoodBlog/src/app1.js",
   "homepage": "https://github.com/skandashastry15/FrontEndDev#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
