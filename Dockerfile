@@ -11,10 +11,10 @@ COPY package*.json ./
 RUN npm install -g http-server
 
 # Copy your FrontEndDev directory to the container
-COPY FrontEndDev/ /app
+COPY FRONTENDDEV/ /app
 
 # Expose port 8080
-EXPOSE 8080
+EXPOSE 8000
 
 # Start http-server to serve index1.html
-CMD ["http-server", "-p", "8080"]
+CMD ["http-server", "FRONTENDDEV/BMSCE_FoodBlog", "-p", "8000"]
