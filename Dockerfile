@@ -1,20 +1,18 @@
 # Use an official Node.js runtime as a parent image
 FROM node:12
 
-# Create and set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the container
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install http-server globally
-RUN npm install -g http-server
+# Install npm dependencies
+RUN npm install
 
-# Copy your FrontEndDev directory to the container
-COPY FrontEndDev/ /app/FrontEndDev
+# Copy the entire project directory into the container
+COPY . .
 
-# Expose port 8080
-EXPOSE 8000
-
-# Start http-server to serve index1.html
-CMD ["http-server", "/app/FrontEndDev", "-p", "8000"]
+# Assuming your index1.html is inside the "public" subdirectory
+# You might need to adjust the path depending on your project structure
+CMD ["npm", "start"]
