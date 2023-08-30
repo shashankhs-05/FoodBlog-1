@@ -1,6 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:latest
-
+FROM node:14
 # Set the working directory in the container
 WORKDIR /app
 
