@@ -6,6 +6,7 @@ body {
     margin: 0 auto;
     overflow-x: hidden;
     align-items: center;
+    justify-content: center;
     scroll-behavior: smooth;
 }
 
@@ -13,6 +14,9 @@ body {
 .div {
     display: inline-block;
     padding-left: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .jax {
@@ -76,6 +80,10 @@ button:hover {
     text-align: left;
     padding-left: 3%;
     padding-right: 30%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .recipe {
@@ -216,6 +224,7 @@ button:hover {
 }
 
 .quick-button1 {
+    text-decoration: none;
     display: inline-block;
     padding-left: 170px;
     font-weight: 500;
@@ -223,20 +232,43 @@ button:hover {
 
 .quick-button1 {
     background-color: #fff;
+    color: black;
     font-size: medium;
     padding-left: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
+    position: relative;
+    left: 60px;
+
+    text-decoration: none;
     /* border-radius: 10px;
     border-width: 0.9px; */
 }
 
 .quick-button2 {
     position: relative;
-    left: 150px;
+    left: 170px;
+}
+
+.quick-button3 {
+    position: relative;
+    left: 300px;
+
+}
+
+.quick-button3-a {
+    text-decoration: none;
+    color: black;
+    text-decoration-color: #fff;
+}
+
+.quick-button3-a:hover {
+    color: white;
+    text-decoration: #EEEEEE;
 }
 
 .quick-button1:hover {
+    text-decoration: none;
     background-color: black;
     color: white;
 }
@@ -421,4 +453,19 @@ footer {
     color: gray;
     text-decoration: #EEEEEE;
 
+}
+
+.class2 {
+    text-align: center;
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    /* display: flex; */
+}
+
+.email1 {
+    position: relative;
+    left: 250px;
+    bottom: 16px;
 }

@@ -76,11 +76,38 @@ app.post('/register', (req, res) => {
         });
 });
 
-app.get('/index', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index1.html'));
 });
 app.get('/bono', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'bono.html'));
+});
+app.get('/comment', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'comment.html'));
+});
+app.get('/quickbut', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quickbut.html'));
+});
+app.get('/quickbut1', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quickbut1.html'));
+});
+app.get('/quickbut2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quickbut2.html'));
+});
+app.get('/quickbut3', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quickbut3.html'));
+});
+app.get('/quickbut4', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quickbut4.html'));
+});
+app.get('/quickbut5', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quickbut5.html'));
+});
+app.get('/quickbut6', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quickbut6.html'));
+});
+app.get('/search', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'search.html'));
 });
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'register.html'));
