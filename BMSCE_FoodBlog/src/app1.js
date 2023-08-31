@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+
+dotenv.config({ path: 'process.env' });
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -16,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 
-mongoose.connect('mongodb+srv://Shravanth_J:Jaga1979@cluster0.gtnryvj.mongodb.net/', {
+mongoose.connect(process.env.MONGO_DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
