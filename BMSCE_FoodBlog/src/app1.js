@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 
 
 const app = express();
-const port = 3000;
+const port = 4000;
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -43,7 +43,7 @@ app.post('/register', (req, res) => {
     User.findOne({ email: email })
         .then((existingUser) => {
             if (existingUser) {
-                res.send('<script>alert("Email already exists"); window.location.href = "http://localhost:3000/register";</script>');
+                res.send('<script>alert("Email already exists"); window.location.href = "/register";</script>');
             } else {
                 bcrypt.hash(password, saltRounds, (err, hashedPassword) => {
                     if (err) {
@@ -60,7 +60,7 @@ app.post('/register', (req, res) => {
                                 console.log('User saved successfully');
                                 console.log('User mail:', email);
                                 console.log('Original password:', password);
-                                res.send('<script>alert("Register Successful,Please login"); window.location.href = "http://localhost:3000/login";</script>');
+                                res.send('<script>alert("Register Successful,Please login"); window.location.href = "/login";</script>');
                             })
                             .catch((error) => {
                                 console.error('Error saving user:', error);
@@ -82,9 +82,9 @@ app.get('/', (req, res) => {
 app.get('/bono', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'bono.html'));
 });
-app.get('/comment', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'comment.html'));
-});
+// app.get('/comment', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'comment.html'));
+// });
 app.get('/quickbut', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'quickbut.html'));
 });
@@ -130,10 +130,10 @@ app.post("/contact", (req, res) => {
     })
     newUser.save()
         .then(() => {
-            res.send('<script>alert("Data saved succesful in database"); window.location.href = "http://localhost:3000/contact";</script>');
+            res.send('<script>alert("Data saved succesful in database"); window.location.href = "/contact";</script>');
         })
         .catch((e) => {
-            res.send('<script>alert("Data storage failed"); window.location.href = "http://localhost:3000/contact";</script>');
+            res.send('<script>alert("Data storage failed"); window.location.href = "/contact";</script>');
         });
 
 })
@@ -141,14 +141,14 @@ app.post("/contact", (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
     if (req.cookies.token) {
-        res.send('<script>alert("Another user is already logged in. Please log out before logging in again."); window.location.href = "http://localhost:3000/login";</script>');
+        res.send('<script>alert("Another user is already logged in. Please log out before logging in again."); window.location.href = "/login";</script>');
         return;
     }
 
     User.findOne({ email: email })
         .then((user) => {
             if (!user) {
-                res.send('<script>alert("Invalid email or password"); window.location.href = "http://localhost:3000/login";</script>');
+                res.send('<script>alert("Invalid email or password"); window.location.href = "/login";</script>');
             } else {
                 bcrypt.compare(password, user.password, (err, result) => {
                     if (err) {
@@ -157,10 +157,10 @@ app.post('/login', (req, res) => {
                     } else if (result) {
                         const token = jwt.sign({ email: user.email }, 'secret-key', { expiresIn: '1h' });
                         res.cookie('token', token, { maxAge: 36000000 });
-                        res.send('<script>alert("Login Successful"); window.location.href = "http://localhost:3000/login";</script>');
+                        res.send('<script>alert("Login Successful"); window.location.href = "/login";</script>');
                         console.log(token);
                     } else {
-                        res.send('<script>alert("Invalid email or password"); window.location.href = "http://localhost:3000/login";</script>');
+                        res.send('<script>alert("Invalid email or password"); window.location.href = "/login";</script>');
                     }
                 });
             }
@@ -201,7 +201,7 @@ function verifyToken(req, res, next) {
 
 app.post('/logout', (req, res) => {
     res.clearCookie('token');
-    res.send('<script>alert("Logged out successfully"); window.location.href = "http://localhost:3000/login";</script>');
+    res.send('<script>alert("Logged out successfully"); window.location.href = "/login";</script>');
 });
 
 app.listen(port, () => {
