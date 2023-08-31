@@ -9,11 +9,5 @@
             "src": "./BMSCE_FoodBlog/src/index.js",
             "use": "@vercel/node"
         }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "destination": "/"
-        }
     ]
 }
