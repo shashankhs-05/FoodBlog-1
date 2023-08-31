@@ -15,4 +15,4 @@ COPY . /app
 # Expose any required ports
 EXPOSE 3000 
 # Define the command to run your Node.js application
-CMD ["node", "BMSCE_FoodBlog/src/app1.js"]
+CMD ["node", "BMSCE_FoodBlog/src/index.js"]
