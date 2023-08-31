@@ -1,13 +1,17 @@
 {
     "version": 2,
+    "framework": "node",
+    "name": "socketing",
     "builds": [
         {
             "src": "./server.js",
             "use": "@vercel/node"
-        },
+        }
+    ],
+    "routes": [
         {
-            "src": "./BMSCE_FoodBlog/src/index.js",
-            "use": "@vercel/node"
+            "src": "./(.*)",
+            "dest": "/index.js"
         }
     ]
 }
