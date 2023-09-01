@@ -12,14 +12,14 @@ const cookieParser = require('cookie-parser');
 
 
 const app = express();
-const port = 4000;
+const port = 3000;
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //process.env.MONGO_DB_URL
-mongoose.connect('mongodb+srv://Shravanth_J:Jaga1979@cluster0.gtnryvj.mongodb.net/', {
+mongoose.connect(process.env.MONGO_DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
