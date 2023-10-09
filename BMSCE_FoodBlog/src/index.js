@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //process.env.MONGO_DB_URL
-mongoose.connect(process.env.MONGO_DB_URL, {
+mongoose.connect('mongodb+srv://Shravanth_J:Jaga1979@cluster0.gtnryvj.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
