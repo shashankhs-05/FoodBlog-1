@@ -7,6 +7,8 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const axios = require('axios');
+const fs = require('fs');
 
 //mongodb://127.0.0.1:27017/thapatechnical
 
@@ -14,12 +16,13 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 app.use(express.static('public'));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //process.env.MONGO_DB_URL
-mongoose.connect('mongodb+srv://Shravanth_J:Jaga1979@cluster0.gtnryvj.mongodb.net/', {
+mongoose.connect('mongodb+srv://shashankhs001:shashank@fintrack.lpuhl.mongodb.net/?retryWrites=true&w=majority&appName=fintrack', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })

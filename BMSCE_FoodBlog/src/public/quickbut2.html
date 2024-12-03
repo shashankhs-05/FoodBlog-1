@@ -45,6 +45,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="quickbut.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='quickbut.css') }}">
+
     <title>Document</title>
 </head>
 
@@ -294,10 +296,33 @@
             </p>
             <p class="ol-para">Cook chicken in the hot oil until golden, about 2 minutes per side. The chicken will
                 finish </p>
-            <p class="ol-para">Transfer chicken to a baking dish.</p>
-            <p class="ol-para">Top each breast with 2 tablespoons tomato sauce...</p>
+                
+                <!-- <div class="box">
+                    <form action="http://localhost:5000/summarize" method="post">
+                        <h1>Summarize Text</h1>
+                        <input type="hidden" name="text" value="lace chicken breasts between two sheets of heavy plastic (resealable freezer bags work well) on a solid, level surface. Firmly pound chicken with the smooth side of a meat mallet to a thickness of 1/2-inch.Season chicken thoroughly with salt and pepper. Using a sifter or strainer; sprinkle flour over chicken breasts, evenly coating both sides. Beat eggs in a shallow bowl and set aside. Mix bread crumbs and 1/2 cup Parmesan cheese in a separate bowl, set aside. Dip a flour-coated chicken breast in beaten eggs.Transfer breast to the bread crumb mixture pressing crumbs into both sides. Repeat for each breast. Let chicken rest for 10 to 15 minutes.. Heat 1/2 inch olive oil in a large skillet on medium-high heat until it begins to shimmer.Cook chicken in the hot oil until golden, about 2 minutes per side. The chicken will finish">
+                        <input type="submit" value="Click to summarize text">
+                    </form>
+                </div> -->
+                <div class="box">
+                    <form action="http://localhost:5000/summarize" method="post">
+                        <h1>Summarize Text</h1>
+                        <input type="hidden" name="text" value="lace chicken breasts between two sheets of heavy plastic (resealable freezer bags work well) on a solid, level surface. Firmly pound chicken with the smooth side of a meat mallet to a thickness of 1/2-inch.Season chicken thoroughly with salt and pepper. Using a sifter or strainer; sprinkle flour over chicken breasts, evenly coating both sides. Beat eggs in a shallow bowl and set aside. Mix bread crumbs and 1/2 cup Parmesan cheese in a separate bowl, set aside. Dip a flour-coated chicken breast in beaten eggs.Transfer breast to the bread crumb mixture pressing crumbs into both sides. Repeat for each breast. Let chicken rest for 10 to 15 minutes.. Heat 1/2 inch olive oil in a large skillet on medium-high heat until it begins to shimmer.Cook chicken in the hot oil until golden, about 2 minutes per side. The chicken will finish">
+                        <input type="submit" value="Click to summarize text">
+                    </form>
+                </div>
+                <div class="summary">
+                    <h1>Summary</h1>
+                    <p>{{ summary }}</p>
+                </div>
+                
+                
+                                    <!-- <input type="hidden" name="text" value="lace chicken breasts between two sheets of heavy plastic (resealable freezer bags work well) on a solid, level surface. Firmly pound chicken with the smooth side of a meat mallet to a thickness of 1/2-inch.Season chicken thoroughly with salt and pepper. Using a sifter or strainer; sprinkle flour over chicken breasts, evenly coating both sides. Beat eggs in a shallow bowl and set aside. Mix bread crumbs and 1/2 cup Parmesan cheese in a separate bowl, set aside. Dip a flour-coated chicken breast in beaten eggs.Transfer breast to the bread crumb mixture pressing crumbs into both sides. Repeat for each breast. Let chicken rest for 10 to 15 minutes.. Heat 1/2 inch olive oil in a large skillet on medium-high heat until it begins to shimmer.Cook chicken in the hot oil until golden, about 2 minutes per side. The chicken will finish"> -->
+
             <ol>
+                
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <div class="v2">
     </div>
